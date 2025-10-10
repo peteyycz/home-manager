@@ -38,6 +38,11 @@
         Y = ":clipboard-yank";
       };
       editor = {
+        cursor-shape = {
+          normal = "block";
+          insert = "bar";
+          select = "underline";
+        };
         auto-format = true; # Enable auto-formatting on save
         line-number = "relative";
         whitespace = {
