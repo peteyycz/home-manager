@@ -6,12 +6,12 @@
 
   home.stateVersion = "25.05";
 
-  home.packages = [
+  home.packages = with pkgs; [
     # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
-    pkgs.helix
-    pkgs.mise
-    pkgs.nixd
-    pkgs.nixfmt-rfc-style
+    helix
+    mise
+    nixd
+    nixfmt-rfc-style
   ];
 
   home.file = {
