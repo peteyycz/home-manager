@@ -27,6 +27,16 @@
     enable = true;
     settings = {
       theme = "gruvbox";
+      keys.normal = {
+        y = ":clipboard-yank";
+        Y = ":clipboard-yank";
+        p = ":clipboard-paste-after";
+        P = ":clipboard-paste-before";
+      };
+      keys.select = {
+        y = ":clipboard-yank";
+        Y = ":clipboard-yank";
+      };
       editor = {
         auto-format = true; # Enable auto-formatting on save
         line-number = "relative";
@@ -41,7 +51,6 @@
           };
         };
       };
-
     };
 
     languages = {
