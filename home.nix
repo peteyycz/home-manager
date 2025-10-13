@@ -8,20 +8,78 @@
 
   home.packages = with pkgs; [
     # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
-    helix
-    mise
     nixd
     nixfmt-rfc-style
+
+    fish
+    starship
+    mise
+    helix
   ];
 
   home.file = {
   };
 
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    GOPATH = "$HOME/Code";
+    GHQ_ROOT = "$GOPATH/src";
   };
 
   programs.home-manager.enable = true;
+
+  programs.fish = {
+    enable = true;
+    plugins = [
+      {
+        name = "z";
+        src = pkgs.fetchFromGitHub {
+          owner = "jethrokuan";
+          repo = "z";
+          rev = "067e867debee59aee231e789fc4631f80fa5788e";
+          sha256 = "sha256-emmjTsqt8bdI5qpx1bAzhVACkg0MNB/uffaRjjeuFxU=";
+        };
+      }
+    ];
+
+    shellAliases = {
+      # Git aliases
+      gc = "git commit";
+      gco = "git checkout";
+      gp = "git push";
+      gl = "git pull";
+      gpf = "git push --force-with-lease";
+      gst = "git status";
+      gd = "git diff";
+      gds = "git diff --staged";
+      gaa = "git add --all";
+      grbc = "git rebase --continue";
+      grba = "git rebase --abort";
+      gq = "git quick";
+
+      # Other aliases
+      vim = "hx";
+      l = "ls -la";
+    };
+
+    interactiveShellInit = ''
+      # Set fish greeting
+      set -U fish_greeting "🐟"
+
+      # Add Go paths
+      fish_add_path (go env GOBIN)
+      fish_add_path "$HOME/.local/bin"
+
+      if test -f ~/.config/fish/config.local.fish
+        source ~/.config/fish/config.local.fish
+      end
+    '';
+  };
+
+  # Enable Starship prompt
+  programs.starship = {
+    enable = true;
+    enableFishIntegration = true;
+  };
 
   programs.helix = {
     enable = true;
@@ -43,16 +101,19 @@
           insert = "bar";
           select = "underline";
         };
-        auto-format = true; # Enable auto-formatting on save
+        file-picker = {
+          hidden = false;
+        };
+        auto-format = true;
         line-number = "relative";
         whitespace = {
-          render = "all"; # Shows all whitespace characters
+          render = "all";
           characters = {
-            space = "·"; # Middle dot for spaces
-            nbsp = "⍽"; # Non-breaking space
-            tab = "→"; # Right arrow for tabs
-            newline = "⏎"; # Return symbol for newlines
-            tabpad = "·"; # Padding for tabs
+            space = "·";
+            nbsp = "⍽";
+            tab = "→";
+            newline = "⏎";
+            tabpad = "·";
           };
         };
       };
@@ -70,7 +131,7 @@
           name = "nix";
           auto-format = true;
           formatter = {
-            command = "nixfmt"; # or nixpkgs-fmt
+            command = "nixfmt";
             args = [ ];
           };
           language-servers = [ "nixd" ];
