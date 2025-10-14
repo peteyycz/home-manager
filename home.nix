@@ -29,6 +29,9 @@
       source = ./kitty;
       recursive = true;
     };
+    ".gitattributes".source = ./.gitattributes;
+    ".gitconfig".source = ./.gitconfig;
+    ".gitignore_global".source = ./.gitignore_global;
   };
 
   home.sessionVariables = {
