@@ -33,7 +33,7 @@
 
   home.sessionVariables = {
     GOPATH = "$HOME/Code";
-    GHQ_ROOT = "$GOPATH/src";
+    GHQ_ROOT = "$HOME/Code/src";
   };
 
   programs.home-manager.enable = true;
