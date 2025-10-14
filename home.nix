@@ -20,23 +20,20 @@
   ];
 
   home.file = {
+    ".tool-versions".source = ./.tool-versions;
+    ".config/zellij" = {
+      source = ./zellij;
+      recursive = true;
+    };
+    ".config/kitty" = {
+      source = ./kitty;
+      recursive = true;
+    };
   };
 
   home.sessionVariables = {
     GOPATH = "$HOME/Code";
     GHQ_ROOT = "$GOPATH/src";
-  };
-
-  home.file.".tool-versions".source = ./.tool-versions;
-
-  home.file.".config/zellij" = {
-    source = ./zellij;
-    recursive = true;
-  };
-
-  home.file.".config/kitty" = {
-    source = ./kitty;
-    recursive = true;
   };
 
   programs.home-manager.enable = true;
