@@ -11,10 +11,12 @@
     nixd
     nixfmt-rfc-style
 
+    ghq
     fish
     starship
     mise
     helix
+    zellij
   ];
 
   home.file = {
@@ -25,7 +27,23 @@
     GHQ_ROOT = "$GOPATH/src";
   };
 
+  home.file.".tool-versions".source = ./.tool-versions;
+
+  home.file.".config/zellij" = {
+    source = ./zellij;
+    recursive = true;
+  };
+
+  home.file.".config/kitty" = {
+    source = ./kitty;
+    recursive = true;
+  };
+
   programs.home-manager.enable = true;
+
+  programs.zellij = {
+    enable = true;
+  };
 
   programs.fish = {
     enable = true;
