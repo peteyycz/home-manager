@@ -7,7 +7,7 @@
   home.stateVersion = "25.05";
 
   home.packages = with pkgs; [
-    # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
+    nerd-fonts.recursive-mono
     nixd
     nixfmt-rfc-style
 
@@ -36,6 +36,15 @@
   };
 
   programs.home-manager.enable = true;
+
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+
+    vimAlias = true;
+    viAlias = true;
+    vimdiffAlias = true;
+  };
 
   programs.zellij = {
     enable = true;
@@ -81,7 +90,6 @@
       gq = "git quick";
 
       # Other aliases
-      vim = "hx";
       l = "ls -la";
     };
 
