@@ -17,6 +17,7 @@
     mise
     helix
     zellij
+    direnv
   ];
 
   home.file = {
@@ -32,11 +33,6 @@
     ".gitattributes".source = ./.gitattributes;
     ".gitconfig".source = ./.gitconfig;
     ".gitignore_global".source = ./.gitignore_global;
-  };
-
-  home.sessionVariables = {
-    GOPATH = "$HOME/Code";
-    GHQ_ROOT = "$HOME/Code/src";
   };
 
   programs.home-manager.enable = true;
@@ -57,6 +53,16 @@
           sha256 = "sha256-emmjTsqt8bdI5qpx1bAzhVACkg0MNB/uffaRjjeuFxU=";
         };
       }
+      {
+        name = "nix-env.fish";
+        src = pkgs.fetchFromGitHub {
+          owner = "lilyball";
+          repo = "nix-env.fish";
+          rev = "00c6cc762427efe08ac0bd0d1b1d12048d3ca727";
+          sha256 = "1hrl22dd0aaszdanhvddvqz3aq40jp9zi2zn0v1hjnf7fx4bgpma";
+        };
+      }
+
     ];
 
     shellAliases = {
@@ -83,9 +89,12 @@
       # Set fish greeting
       set -U fish_greeting "🐟"
 
-      # Add Go paths
-      fish_add_path (go env GOBIN)
+      # Add paths
+      # fish_add_path (go env GOBIN)
       fish_add_path "$HOME/.local/bin"
+
+      set -gx GOPATH "$HOME/Code"
+      set -gx GHQ_ROOT "$GOPATH/src"
 
       if test -f ~/.config/fish/config.local.fish
         source ~/.config/fish/config.local.fish
@@ -97,6 +106,11 @@
   programs.starship = {
     enable = true;
     enableFishIntegration = true;
+  };
+
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true;
   };
 
   programs.helix = {
@@ -163,6 +177,7 @@
     enableFishIntegration = true;
     settings = {
       legacy_version_file = true;
+      idiomatic_version_file_enable_tools = [ "node" ];
     };
   };
 }
