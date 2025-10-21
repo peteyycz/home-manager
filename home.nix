@@ -12,12 +12,6 @@
     nixfmt-rfc-style
 
     ghq
-    fish
-    starship
-    mise
-    helix
-    zellij
-    direnv
   ];
 
   home.file = {
