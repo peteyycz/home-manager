@@ -11,6 +11,10 @@
     nixd
     nixfmt-rfc-style
 
+    inter
+    kubectl
+    kubernetes-helm
+
     ghq
   ];
 
@@ -20,8 +24,8 @@
       source = ./zellij;
       recursive = true;
     };
-    ".config/kitty" = {
-      source = ./kitty;
+    ".config/alacritty" = {
+      source = ./alacritty;
       recursive = true;
     };
     ".gitattributes".source = ./.gitattributes;
@@ -30,6 +34,8 @@
   };
 
   programs.home-manager.enable = true;
+  programs.difftastic.enable = true;
+  programs.ripgrep.enable = true;
 
   programs.neovim = {
     enable = true;
@@ -39,6 +45,8 @@
     viAlias = true;
     vimdiffAlias = true;
   };
+
+  programs.fzf.enable = true;
 
   programs.zellij = {
     enable = true;
