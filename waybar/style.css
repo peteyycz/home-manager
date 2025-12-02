@@ -1,6 +1,6 @@
 * {
     font-family: "RecMonoLinear Nerd Font", sans-serif;
-    font-size: 15px;
+    font-size: 16px;
 }
 
 window#waybar {
@@ -8,6 +8,7 @@ window#waybar {
     color: #ebdbb2;
     border-bottom: 2px solid #3c3836;
 }
+
 
 #workspaces button {
     padding: 0 5px;
@@ -41,6 +42,7 @@ window#waybar {
 
 #clock {
     color: #d3869b;
+    font-size: 18px;
 }
 
 #cpu {
