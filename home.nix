@@ -57,6 +57,12 @@
     ".gitignore_global".source = ./.gitignore_global;
   };
 
+  dconf.settings = {
+    "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
+    };
+  };
+
   programs.home-manager.enable = true;
   programs.difftastic.enable = true;
   programs.ripgrep.enable = true;
