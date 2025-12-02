@@ -24,12 +24,12 @@
     },
 
     "cpu": {
-        "format": " {usage}%",
+        "format": "󰻠 {usage}%",
         "tooltip": false
     },
 
     "memory": {
-        "format": " {}%"
+        "format": "󰍛 {}%"
     },
 
     "battery": {
@@ -38,23 +38,23 @@
             "critical": 15
         },
         "format": "{icon} {capacity}%",
-        "format-charging": " {capacity}%",
-        "format-plugged": " {capacity}%",
-        "format-icons": ["", "", "", "", ""]
+        "format-charging": "󰂄 {capacity}%",
+        "format-plugged": "󰚥 {capacity}%",
+        "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾"]
     },
 
     "network": {
-        "format-wifi": " {signalStrength}%",
-        "format-ethernet": "",
-        "format-disconnected": "",
+        "format-wifi": "󰤨 {signalStrength}%",
+        "format-ethernet": "󰈀",
+        "format-disconnected": "󰤭",
         "tooltip-format": "{ifname}: {ipaddr}"
     },
 
     "pulseaudio": {
         "format": "{icon} {volume}%",
-        "format-muted": "",
+        "format-muted": "󰝟",
         "format-icons": {
-            "default": ["", "", ""]
+            "default": ["󰕿", "󰖀", "󰕾"]
         },
         "on-click": "pavucontrol"
     },
