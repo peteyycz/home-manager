@@ -40,3 +40,9 @@ window-padding-y = 5
 
 # Clipboard
 copy-on-select = clipboard
+
+# Launch zellij with session picker
+command = zellij-session-picker
+
+# Close without confirmation
+confirm-close-surface = false

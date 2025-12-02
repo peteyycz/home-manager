@@ -22,6 +22,8 @@
     claude-code
 
     ghq
+
+    (writeShellScriptBin "zellij-session-picker" (builtins.readFile ./scripts/zellij-session-picker))
   ];
 
   home.file = {
