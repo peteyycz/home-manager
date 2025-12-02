@@ -1,6 +1,6 @@
 * {
-    font-family: "RecursiveMonoLnrSt Nerd Font", monospace;
-    font-size: 13px;
+    font-family: "Rubik", sans-serif;
+    font-size: 15px;
 }
 
 window#waybar {
@@ -58,4 +58,13 @@ window#waybar {
 
 #pulseaudio.muted {
     color: #928374;
+}
+
+#custom-vpn {
+    padding: 0 10px;
+    color: #928374;
+}
+
+#custom-vpn.connected {
+    color: #98971a;
 }

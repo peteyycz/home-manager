@@ -12,6 +12,7 @@
     nixfmt-rfc-style
 
     inter
+    rubik
     kubectl
     kubernetes-helm
 
@@ -34,6 +35,10 @@
     };
     ".config/waybar" = {
       source = ./waybar;
+      recursive = true;
+    };
+    ".config/wofi" = {
+      source = ./wofi;
       recursive = true;
     };
     ".gitattributes".source = ./.gitattributes;
