@@ -45,6 +45,10 @@
       source = ./wofi;
       recursive = true;
     };
+    ".config/mako" = {
+      source = ./mako;
+      recursive = true;
+    };
     ".gitattributes".source = ./.gitattributes;
     ".gitconfig".source = ./.gitconfig;
     ".gitignore_global".source = ./.gitignore_global;
