@@ -24,8 +24,16 @@
       source = ./zellij;
       recursive = true;
     };
-    ".config/alacritty" = {
-      source = ./alacritty;
+    ".config/ghostty" = {
+      source = ./ghostty;
+      recursive = true;
+    };
+    ".config/hypr" = {
+      source = ./hypr;
+      recursive = true;
+    };
+    ".config/waybar" = {
+      source = ./waybar;
       recursive = true;
     };
     ".gitattributes".source = ./.gitattributes;
