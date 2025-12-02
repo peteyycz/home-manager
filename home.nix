@@ -6,6 +6,8 @@
 
   home.stateVersion = "25.05";
 
+  nixpkgs.config.allowUnfree = true;
+
   home.packages = with pkgs; [
     nerd-fonts.recursive-mono
     nixd
@@ -15,6 +17,8 @@
     rubik
     kubectl
     kubernetes-helm
+
+    claude-code
 
     ghq
   ];
