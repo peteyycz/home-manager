@@ -5,7 +5,7 @@
     "spacing": 4,
     "modules-left": ["hyprland/workspaces", "hyprland/window"],
     "modules-center": ["clock"],
-    "modules-right": ["pulseaudio", "custom/vpn", "network", "cpu", "memory", "battery", "tray"],
+    "modules-right": ["hyprland/language", "pulseaudio", "custom/vpn", "network", "cpu", "memory", "battery", "tray"],
 
     "hyprland/workspaces": {
         "disable-scroll": true,
@@ -15,6 +15,13 @@
 
     "hyprland/window": {
         "max-length": 50
+    },
+
+    "hyprland/language": {
+        "format": "󰌌 {}",
+        "format-en": "US",
+        "format-hu": "HU",
+        "on-click": "hyprctl switchxkblayout all next"
     },
 
     "clock": {
